@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&family=Protest+Riot&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*,*::before ,*::after{
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to bottom right, #7db9e8, #ddebf7); /** i really track down linear gredient attribute pretty solicituously captivating and appealing*/
+    font-family: Arial, Helvetica, sans-serif;
+
+    width:100%;
+    height:100vh;
+}
+.container{
+    background: linear-gradient(to bottom right, #9b59b6, #3498db);
+    padding: 100px;
+    border-radius: 10px;
+    margin-top:50rem;
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50rem;
+}
+.grid-board{
+    width:50vh;
+    height:50vh;
+}
+.cell{
+    width:150px;
+    height:150px;
+    border:2px solid transparent;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    box-shadow:  1px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.cell:hover {
+    /* transform: scale(1.1); */
+    background-color: rgba(188, 206, 222, 0.849);
+    border-color:hsla(203, 55%, 14%, 0.651);
+    box-shadow:  4px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.cell:nth-child(1), .cell:nth-child(2) , .cell:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(1), .cell:nth-child(4) , .cell:nth-child(7){
+    border-left: none;
+}
+.cell:nth-child(3), .cell:nth-child(6) , .cell:nth-child(9){
+    border-right:none;
+} 
+#resetBtn{
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: 0.6s ease-in-out;
+    cursor:pointer;
+    margin-top: -120px;
+    background-color: hsl(227, 78%, 63%); 
+    box-shadow: 2px 2px 2px 2px hsla(226, 76%, 34%, 0.509);
+}
+#resetBtn:hover {
+    background-color: hsl(207, 84%, 55%); 
+    box-shadow: 1px 2px 1px 1px hsla(60, 68%, 24%, 0.509);
+    color: #fff;
+}
+#resetBtn:active{
+    background-color: #2c2903; 
+    box-shadow: 1px 1px 1px 5px hsla(60, 68%, 24%, 0.509);
+    color: hsl(218, 97%, 43%);
+}
+h1{
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight:400;
+    text-shadow: 3px 3px 3px hsl(237, 28%, 26%);
+    margin-top:-60px;
+}
+#statusResult{
+    display:none;
+    font-size: 2rem;
+    font-family: "Protest Riot", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding:10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(0, 0, 0 , 0.1);
+    text-align:center;
+    margin-top: 20px;
+    color: #333;
+    transition: 0.3s ease-in-out;
+}
+#statusResult:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transform: scale(1.05);
+}
+.resultMessage{
+    margin-top:-10px;
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    font-weight:bold;
+    gap:10px;
+}
+.player-symbol {
+    font-size: 5rem; 
+    color:rgb(255, 153, 0);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+.winning-cell {
+    background-color: hsla(129, 100%, 55%, 0.562);
+    animation: pulse 1s infinite ;
+    color: white;
+}
+/** it would help us to make out stupefying animation that mark down the entire victorious paths*/
+ @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+@media screen and (max-width:575px){
+        .container{
+           width:100%;
+           max-width: 500px;
+         }
+     
+    .grid-board{
+        width:100px;
+        height:100px;
+    }
+    
+} 
